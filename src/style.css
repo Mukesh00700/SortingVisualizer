@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.array {
+  display: flex;
+  gap: 0;
+  margin-top: 20px;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 40px;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  position: relative;
+}
+
+.highlight {
+  background-color: orange !important;
+}
+
+.mid-label {
+  position: absolute;
+  bottom: -18px;
+  font-size: 10px;
+  color: red;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
