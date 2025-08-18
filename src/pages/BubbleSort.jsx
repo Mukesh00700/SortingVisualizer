@@ -3,6 +3,8 @@ import "../style.css";
 import Button from "../components/Button";
 import BubbleSortInfo from "../infoPages/BubbleSortInfo";
 import { Link } from "react-router-dom";
+import GradientText from '../components/GradientText'
+
 
 export default function BubbleSort() {
   const [array, setArray] = useState([64, 34, 25, 12, 22, 11, 90]);
@@ -59,16 +61,23 @@ export default function BubbleSort() {
 
   return (
     <div className="bg-sub-image">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left side - Visualizer */}
-        <div className="container mt-20 w-1/2 h-1/2">
-          <h2 className="text-4xl text-gray-400 hover:text-white">Bubble Sort Visualizer</h2>
-
+        <div className="w-full md:w-1/2 p-4 pt-10">
+          {/* <h2 className="text-4xl text-center text-gray-400 hover:text-white">Bubble Sort Visualizer</h2> */}
+          <GradientText
+                colors={["#9aa3d9", "#626ca1", "#3d4370","#3d4370","#626ca1","#9aa3d9"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="custom-class"
+                            >
+                Bubble Sort Visualizer
+          </GradientText>
           {/* Progress bar */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-4 justify-center">
             <input
               type="range"
-              min="2"
+              min="1"
               max="15"
               value={arraySize}
               onChange={(e) => setArraySize(Number(e.target.value))}
@@ -79,7 +88,7 @@ export default function BubbleSort() {
 
           {/* Bar graph */}
           <div
-            className="array mt-4"
+            className="array mt-4 flex items-end justify-center"
             style={{ height: "250px", display: "flex", alignItems: "flex-end" }}
           >
             {array.map((num, idx) => (
@@ -99,7 +108,7 @@ export default function BubbleSort() {
           </div>
 
           {/* Buttons */}
-          <div className="buttons mt-6 flex gap-4">
+          <div className="buttons mt-6 flex justify-center">
             <Button onClick={generateArray} disabled={isSorting} buttonName={"Generate Array"} />
             <Button onClick={startSort} disabled={isSorting} buttonName={"Start Bubble Sort"} />
           </div>
@@ -154,7 +163,7 @@ export default function BubbleSort() {
         </div>
       </div>
       <BubbleSortInfo />
-      <div className="mt-8 text-center">
+      <div className="mt-8 pb-10 text-center">
               <Link to="/" className=" text-gray-500 text-2xl gap-2 hover:text-white transition">
                 ← Back to Home
               </Link>

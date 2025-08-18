@@ -4,6 +4,7 @@ import "../App.css";
 import Button from "../components/Button";
 import SelectionSortInfo from "../infoPages/SelectionSortInfo";
 import { Link } from "react-router-dom";
+import GradientText from '../components/GradientText'
 
 export default function SelectionSort() {
   const [array, setArray] = useState([29, 10, 14, 37, 13]);
@@ -64,16 +65,23 @@ export default function SelectionSort() {
 
   return (
     <div className="bg-sub-image">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left side - Visualizer */}
-        <div className="container mt-20 w-1/2 h-1/2">
-          <h2 className="text-4xl text-gray-400 hover:text-white">Selection Sort Visualizer</h2>
-
+        <div className="w-full md:w-1/2 p-4 pt-10">
+          {/* <h2 className="text-4xl text-gray-400 hover:text-white">Selection Sort Visualizer</h2> */}
+          <GradientText
+                          colors={["#9aa3d9", "#626ca1", "#3d4370","#3d4370","#626ca1","#9aa3d9"]}
+                          animationSpeed={3}
+                          showBorder={false}
+                          className="custom-class"
+                                      >
+                          Selection Sort Visualizer
+                    </GradientText>
           {/* Progress bar */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-4 justify-center">
             <input
               type="range"
-              min="3"
+              min="1"
               max="15"
               value={arraySize}
               onChange={(e) => setArraySize(Number(e.target.value))}
@@ -84,7 +92,7 @@ export default function SelectionSort() {
 
           {/* Array Bars */}
           <div
-            className="array mt-4"
+            className="array mt-4 flex items-end justify-center"
             style={{
               height: "250px",
               display: "flex",
@@ -113,14 +121,14 @@ export default function SelectionSort() {
           </div>
 
           {/* Buttons */}
-          <div className="buttons mt-6">
+          <div className="buttons mt-6 flex justify-center">
             <Button onClick={generateArray} disabled={isSorting} buttonName={"Generate Array"} />
             <Button onClick={selectionSort} disabled={isSorting} buttonName={"Start Selection Sort"} />
           </div>
         </div>
 
         {/* Right side - Code snippet with glassy finish */}
-        <div className="flex-1 p-4 mt-20">
+        <div className="block flex-1 p-4 mt-20">
           <div
             className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto h-full"
             style={{ fontFamily: "monospace" }}
@@ -174,7 +182,7 @@ export default function SelectionSort() {
       <SelectionSortInfo />
 
       {/* Back button */}
-      <div className="mt-8 text-center">
+      <div className="mt-8 pb-10 text-center">
         <Link
           to="/"
           className=" text-gray-500 text-2xl gap-2 hover:text-white transition"

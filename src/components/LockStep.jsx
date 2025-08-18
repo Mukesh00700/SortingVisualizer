@@ -60,7 +60,7 @@ export default function LockStep() {
   }, []);
 
   return (
-    <h1 className="text-6xl font-bold tracking-widest text-white text-center">
+    <h1 className="text-4xl font-bold tracking-widest text-white text-center md:text-6xl">
       {displayed.join('')}
     </h1>
   );

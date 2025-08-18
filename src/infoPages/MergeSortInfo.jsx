@@ -95,14 +95,14 @@ console.log(mergeSort([12, 11, 13, 5, 6, 7]));`,
   };
 
   return (
-    <div className="flex gap-4 mt-20 min-h-screen">
+    <div className="flex flex-col mb-10 md:flex gap-4 mt-10 min-h-screen">
       {/* Left Code Panel */}
       <div className="flex-1 flex flex-col p-4">
         <div
           className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto flex-1"
           style={{ fontFamily: "monospace" }}
         >
-          {/* Language Tabs */}
+         {/* Language Tabs */}
           <div className="flex gap-4 mb-4">
             <button
               onClick={() => setLanguage("cpp")}

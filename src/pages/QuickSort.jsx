@@ -3,6 +3,7 @@ import '../style.css';
 import Button from "../components/Button";
 import QuickSortInfo from "../infoPages/QuickSortInfo";
 import { Link } from 'react-router-dom';
+import GradientText from '../components/GradientText'
 
 export default function QuickSort() {
   const [array, setArray] = useState([12, 33, 45, 56]);
@@ -88,13 +89,20 @@ export default function QuickSort() {
 
   return (
     <div className="bg-sub-image">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left side - Visualizer */}
-        <div className="container mt-20 w-1/2 h-1/2">
-          <h2 className="text-4xl text-gray-400 hover:text-white">Quick Sort Visualizer</h2>
-
+        <div className="w-full md:w-1/2 p-4 pt-10">
+          {/* <h2 className="text-4xl text-gray-400 hover:text-white">Quick Sort Visualizer</h2> */}
+            <GradientText
+                            colors={["#9aa3d9", "#626ca1", "#3d4370","#3d4370","#626ca1","#9aa3d9"]}
+                            animationSpeed={3}
+                            showBorder={false}
+                            className="custom-class"
+                                        >
+                            Quick Sort Visualizer
+          </GradientText>
           {/* Progress bar */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-4 justify-center">
             <input
               type="range"
               min="1"
@@ -107,7 +115,7 @@ export default function QuickSort() {
           </div>
 
           {/* Bar graph */}
-          <div className="array mt-4" style={{ height: "250px", display: "flex", alignItems: "flex-end" }}>
+          <div className="array mt-4 flex items-end justify-center" style={{ height: "250px", display: "flex", alignItems: "flex-end" }}>
             {array.map((num, idx) => (
               <div
                 key={idx}
@@ -126,14 +134,14 @@ export default function QuickSort() {
           </div>
 
           {/* Buttons */}
-          <div className="buttons mt-6">
+          <div className="buttons mt-6 flex justify-center">
             <Button onClick={generateArray} disabled={isSorting} buttonName="Generate Array" />
             <Button onClick={startSort} disabled={isSorting} buttonName="Start Quick Sort" />
           </div>
         </div>
 
         {/* Right side - Code snippet */}
-        <div className="flex-1 p-4 mt-20">
+        <div className="block flex-1 p-4 mt-20">
           <div
             className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto h-full"
             style={{ fontFamily: "monospace" }}
@@ -173,7 +181,7 @@ export default function QuickSort() {
         </div>
       </div>
       <QuickSortInfo />
-      <div className="mt-8 text-center">
+      <div className="mt-8 pb-10 text-center">
         <Link to="/" className=" text-gray-500 text-2xl gap-2 hover:text-white transition">
           ← Back to Home
         </Link>

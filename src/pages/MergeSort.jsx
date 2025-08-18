@@ -4,6 +4,8 @@ import "../App.css";
 import Button from "../components/Button";
 import MergeSortInfo from "../infoPages/MergeSortInfo";
 import { Link } from "react-router-dom";
+import GradientText from '../components/GradientText'
+
 export default function MergeSort() {
   const [array, setArray] = useState([38, 27, 43, 3, 9, 82, 10]);
   const [steps, setSteps] = useState([]); //which array index are being compared
@@ -104,13 +106,20 @@ export default function MergeSort() {
 
   return (
     <div className="bg-sub-image">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left side - Visualizer */}
-        <div className="container mt-20 w-1/2 h-1/2">
-          <h2 className="text-4xl text-gray-400 hover:text-white">Merge Sort Visualizer</h2>
-
+        <div className="w-full md:w-1/2 p-4 pt-10">
+          {/* <h2 className="text-4xl text-gray-400 hover:text-white">Merge Sort Visualizer</h2> */}
+            <GradientText
+                colors={["#9aa3d9", "#626ca1", "#3d4370","#3d4370","#626ca1","#9aa3d9"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="custom-class"
+                  >
+                Merge Sort Visualizer
+            </GradientText>
           {/* Progress bar */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-4 justify-center">
             <input
               type="range"
               min="1"
@@ -123,7 +132,7 @@ export default function MergeSort() {
           </div>
 
           {/* Bar graph */}
-          <div className="array mt-4" style={{ height: "250px", display: "flex", alignItems: "flex-end" }}>
+          <div className="array mt-4 flex items-end justify-center" style={{ height: "250px", display: "flex", alignItems: "flex-end" }}>
             {array.map((num, idx) => (
               <div
                 key={idx}
@@ -142,20 +151,20 @@ export default function MergeSort() {
           </div>
 
           {/* Fixed buttons */}
-          <div className="buttons mt-6">
+          <div className="buttons mt-6 flex justify-center">
             <Button onClick={generateArray} disabled={isSorting} buttonName={'Generate Array'}/>
-            <Button onClick={startSort} disabled={isSorting} buttonName={'Start Merge Sort'}/>
+            <Button onClick={startSort} disabled={isSorting} buttonName={'Start Merging'}/>
           </div>
         </div>
 
         {/* Right side - Code snippet with glassy finish */}
-        <div className="flex-1 p-4 mt-20">
+        <div className="block flex-1 p-4 mt-20">
           <div
             className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto h-full"
             style={{ fontFamily: "monospace" }}
           >
             <pre>
-              <code className="text-2xl"
+              <code
                 style={{
                   backgroundColor:
                     highlightLine === 1 ? "rgba(255,255,0,0.3)" : "transparent",
@@ -264,7 +273,7 @@ export default function MergeSort() {
         </div>
       </div>
       <MergeSortInfo/>
-      <div className="mt-8 text-center">
+      <div className="mt-8 pb-10 text-center">
         <Link to="/" className=" text-gray-500 text-2xl gap-2 hover:text-white transition">
           ← Back to Home
         </Link>

@@ -93,9 +93,9 @@ console.log(quickSort([10, 7, 8, 9, 1, 5]));`
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-col mb-10 md:flex gap-4 mt-20 min-h-screen">
       {/* Left Code Panel */}
-      <div className="flex-1 p-4 w-1/2">
+      <div className="flex-1 flex flex-col p-4">
         <div
           className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto h-full"
           style={{ fontFamily: "monospace" }}
@@ -128,7 +128,8 @@ console.log(quickSort([10, 7, 8, 9, 1, 5]));`
       </div>
 
       {/* Right Info Panel */}
-      <div className="bg-gray-800 w-1/2 flex-1 p-6 rounded-lg text-white overflow-auto">
+        <div className="flex-1 flex flex-col p-4">
+          <div className="bg-gray-800 w-full rounded-lg text-white overflow-auto flex-1 p-6">
         <h2 className="text-2xl font-bold mb-4">History of Quick Sort</h2>
         <p className="mb-4">
           Quick Sort was developed by <a href="https://en.wikipedia.org/wiki/C._A._R._Hoare" className="text-blue-600 font-bold">C.A.R. Hoare</a> in 1960.  
@@ -146,6 +147,8 @@ console.log(quickSort([10, 7, 8, 9, 1, 5]));`
           Quick Sort is preferred for its in-place sorting and small constant factors.
         </p>
       </div>
+        </div>
+      
     </div>
   );
 }

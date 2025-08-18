@@ -64,7 +64,7 @@ console.log(insertionSort([12, 11, 13, 5, 6]));`,
   };
 
   return (
-    <div className="flex gap-4 mt-20 min-h-screen">
+    <div className="flex flex-col mb-10 md:flex gap-4 mt-20 min-h-screen">
       {/* Left Code Panel */}
       <div className="flex-1 flex flex-col p-4">
         <div

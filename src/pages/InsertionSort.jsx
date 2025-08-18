@@ -4,6 +4,7 @@ import "../App.css";
 import Button from "../components/Button";
 import InsertionSortInfo from "../infoPages/InsertionSortInfo";
 import { Link } from "react-router-dom";
+import GradientText from '../components/GradientText'
 
 export default function InsertionSort() {
   const [array, setArray] = useState([50, 20, 40, 10, 30]);
@@ -65,15 +66,20 @@ export default function InsertionSort() {
 
   return (
     <div className="bg-sub-image">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left side - Visualizer */}
-        <div className="container mt-20 w-1/2 h-1/2">
-          <h2 className="text-4xl text-gray-400 hover:text-white">
-            Insertion Sort Visualizer
-          </h2>
+        <div className="w-full md:w-1/2 p-4 pt-10">
+          <GradientText
+                          colors={["#9aa3d9", "#626ca1", "#3d4370","#3d4370","#626ca1","#9aa3d9"]}
+                          animationSpeed={3}
+                          showBorder={false}
+                          className="custom-class"
+                                      >
+                          Insertion Sort Visualizer
+          </GradientText>
 
           {/* Progress bar */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-4 justify-center">
             <input
               type="range"
               min="5"
@@ -87,7 +93,7 @@ export default function InsertionSort() {
 
           {/* Bar graph */}
           <div
-            className="array mt-4"
+            className="array mt-4 flex items-end justify-center"
             style={{ height: "250px", display: "flex", alignItems: "flex-end" }}
           >
             {array.map((num, idx) => (
@@ -106,7 +112,7 @@ export default function InsertionSort() {
           </div>
 
           {/* Buttons */}
-          <div className="buttons mt-6">
+          <div className="buttons mt-6 flex justify-center">
             <Button
               onClick={generateArray}
               disabled={isSorting}
@@ -128,7 +134,6 @@ export default function InsertionSort() {
           >
             <pre>
               <code
-                className="text-2xl"
                 style={{
                   backgroundColor:
                     highlightLine === 1 ? "rgba(255,255,0,0.3)" : "transparent",
@@ -183,11 +188,8 @@ export default function InsertionSort() {
       <InsertionSortInfo />
 
       {/* Back button */}
-      <div className="mt-8 text-center">
-        <Link
-          to="/"
-          className=" text-gray-500 text-2xl gap-2 hover:text-white transition"
-        >
+      <div className="mt-8 pb-10 text-center">
+        <Link to="/" className=" text-gray-500 text-2xl gap-2 hover:text-white transition">
           ← Back to Home
         </Link>
       </div>
