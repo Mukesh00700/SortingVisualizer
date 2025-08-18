@@ -16,7 +16,9 @@ function App() {
     <div className='bg-black'>
       <Navbar onToggleSidebar={()=>setShowSideBar(!showSideBar)} showSideBar={showSideBar}/>
       <SideBar isVisible={showSideBar} setShowSideBar={setShowSideBar} />
-      <div className='pt-16'>
+      <div className='pt-16' onClick={()=>{
+        setShowSideBar(false)
+      }}>
         <ScrollToTop />
         <Routes>
         <Route path="/" element={<Landing/>}></Route>
