@@ -125,6 +125,8 @@ export default function QuickSort() {
                   marginRight: gapIndex === idx ? "20px" : "0px",
                   backgroundColor: idx === midIndex ? "red" : undefined,
                   border: `black solid 1px`,
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
                 }}
               >
                 {num}

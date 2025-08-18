@@ -142,6 +142,8 @@ export default function MergeSort() {
                   marginRight: gapIndex === idx ? "20px" : "0px",
                   backgroundColor: idx === midIndex ? "red" : undefined,
                   border: `black solid 1px`,
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
                 }}
               >
                 {num}
@@ -157,7 +159,6 @@ export default function MergeSort() {
           </div>
         </div>
 
-        {/* Right side - Code snippet with glassy finish */}
         <div className="block flex-1 p-4 mt-20">
           <div
             className="bg-gray-900 bg-opacity-60 backdrop-blur-md text-white p-4 rounded-lg overflow-auto h-full"

@@ -113,6 +113,8 @@ export default function SelectionSort() {
                   color: "white",
                   textAlign: "center",
                   fontSize: "12px",
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
                 }}
               >
                 {num}
@@ -178,10 +180,8 @@ export default function SelectionSort() {
         </div>
       </div>
 
-      {/* Info page */}
       <SelectionSortInfo />
 
-      {/* Back button */}
       <div className="mt-8 pb-10 text-center">
         <Link
           to="/"

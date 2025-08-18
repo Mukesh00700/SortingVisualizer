@@ -9,7 +9,7 @@ import BubbleSort from './pages/BubbleSort'
 import SelectionSort from './pages/SelectionSort'
 import InsertionSort from './pages/InsertionSort'
 import { Routes,Route } from 'react-router-dom'
-
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const[showSideBar,setShowSideBar] = useState(false);
   return (
@@ -17,6 +17,7 @@ function App() {
       <Navbar onToggleSidebar={()=>setShowSideBar(!showSideBar)} showSideBar={showSideBar}/>
       <SideBar isVisible={showSideBar} setShowSideBar={setShowSideBar} />
       <div className='pt-16'>
+        <ScrollToTop />
         <Routes>
         <Route path="/" element={<Landing/>}></Route>
         <Route path="/merge-sort" element={<MergeSort/>}></Route>

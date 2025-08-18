@@ -27,28 +27,28 @@ export default function InsertionSort() {
 
   const insertionSort = async (arr) => {
     for (let i = 1; i < arr.length; i++) {
-      setHighlightLine(1); // outer loop
+      setHighlightLine(1);
       await sleep(300);
 
       let key = arr[i];
       setHighlightIndex(i);
-      setHighlightLine(2); // key assignment
+      setHighlightLine(2); 
       await sleep(400);
 
       let j = i - 1;
-      setHighlightLine(3); // while condition
+      setHighlightLine(3); 
       await sleep(500);
 
       while (j >= 0 && arr[j] > key) {
         setHighlightIndex(j);
-        setHighlightLine(4); // shifting
+        setHighlightLine(4);
         arr[j + 1] = arr[j];
         j = j - 1;
         setArray([...arr]);
         await sleep(500);
       }
 
-      setHighlightLine(5); // insert key
+      setHighlightLine(5);
       arr[j + 1] = key;
       setArray([...arr]);
       await sleep(400);
@@ -104,6 +104,8 @@ export default function InsertionSort() {
                   height: `${num * 3}px`,
                   backgroundColor:highlightIndex === idx ? "red" : undefined,
                   border: `black solid 1px`,
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
                 }}
               >
                 {num}
@@ -184,10 +186,8 @@ export default function InsertionSort() {
         </div>
       </div>
 
-      {/* Info Section */}
       <InsertionSortInfo />
 
-      {/* Back button */}
       <div className="mt-8 pb-10 text-center">
         <Link to="/" className=" text-gray-500 text-2xl gap-2 hover:text-white transition">
           ← Back to Home

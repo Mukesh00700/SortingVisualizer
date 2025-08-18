@@ -99,7 +99,9 @@ export default function BubbleSort() {
                   height: `${num * 3}px`,
                   border: `black solid 1px`,
                   marginRight: idx === steps[0] ? "5px" : "2px",
-                  backgroundColor: steps.includes(idx) ? "red" : undefined, // teal color as in old algos
+                  backgroundColor: steps.includes(idx) ? "red" : undefined,
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
                 }}
               >
                 {num}
