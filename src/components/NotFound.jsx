@@ -9,7 +9,7 @@ export default function NotFound() {
         to="/"
         className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition"
       >
-        Go Back Home
+        Go To Home
       </Link>
     </div>
   );
