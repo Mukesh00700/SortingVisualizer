@@ -8,6 +8,7 @@ import MergeSort from './pages/MergeSort'
 import BubbleSort from './pages/BubbleSort'
 import SelectionSort from './pages/SelectionSort'
 import InsertionSort from './pages/InsertionSort'
+import NotFound from './components/NotFound'
 import { Routes,Route } from 'react-router-dom'
 import ScrollToTop from "./components/ScrollToTop";
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/insertion-sort" element={<InsertionSort/>}></Route>
         <Route path="/selection-sort" element={<SelectionSort/>}></Route>
         <Route path="/bubble-sort" element={<BubbleSort/>}></Route>
+        <Route path='*' element={<NotFound/>}></Route>
       </Routes>
       </div> 
     </div>
